@@ -49,13 +49,13 @@ Para trocar a playlist, substitua o ID em dois lugares no `index.html`
 O formulário envia via [Formspree](https://formspree.io) — GitHub Pages é
 estático e não processa POST por conta própria.
 
-**Falta ativar:** crie uma conta gratuita (50 envios/mês), adicione um
-formulário apontando para `uriel.juliattivalle@gmail.com` e troque
-`SEU_FORM_ID` no `index.html` pelo id que eles fornecem (algo como
-`xanbqkzy`). Confirme o e-mail no primeiro envio.
+Está ativo no plano gratuito (50 envios/mês). O `action` do form no
+`index.html` aponta para o endpoint; para trocar de conta, basta
+substituir o id na URL.
 
-Enquanto o id não for trocado, o formulário cai no `mailto:` — que só
-funciona para quem tem um cliente de e-mail configurado no dispositivo.
+Se o `action` voltar a conter `SEU_FORM_ID`, o formulário cai no
+`mailto:` como alternativa — que só funciona para quem tem um cliente
+de e-mail configurado no dispositivo.
 
 O campo `_gotcha` é uma isca anti-spam: fica oculto, e envios que o
 preencherem são descartados pelo Formspree.
