@@ -366,9 +366,9 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .timeline__item {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 24px;
-  padding: 34px 0;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 32px;
+  padding: 40px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -390,7 +390,63 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   color: var(--accent);
 }
 
+.timeline__duration {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  opacity: 0.75;
+  text-transform: none;
+}
+
 .timeline__item p { margin: 0; }
+
+.timeline__points {
+  margin: 0 0 1.2rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.timeline__points li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+.timeline__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline__points strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.timeline__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline__stack .tag {
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
 
 /* ---------------------------- Projetos ------------------------- */
 .filters {
