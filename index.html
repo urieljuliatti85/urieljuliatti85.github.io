@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uriel Juliatti — Software Engineer</title>
+<meta name="description" content="Uriel Juliatti — Software Engineer especializado em Ruby on Rails, APIs e produtos web. Portfólio, projetos e contato.">
+<meta name="author" content="Uriel Juliatti">
+<link rel="canonical" href="https://urieljuliatti.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Uriel Juliatti — Software Engineer">
+<meta property="og:description" content="Software Engineer especializado em Ruby on Rails, APIs e produtos web.">
+<meta property="og:image" content="https://urieljuliatti.github.io/assets/img/avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128187;</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="site-header" id="header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark">&lt;/&gt;</span>
+        Uriel Juliatti
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#top">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================== HERO ============================== -->
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <hr class="rule">
+          <h1>Olá, sou o Uriel,<br><span class="accent">Software Engineer</span></h1>
+          <p class="hero__lead">
+            Construo aplicações web e APIs com Ruby on Rails, com foco em código
+            testado, arquitetura limpa e produtos que resolvem problema de verdade.
+            Baseado em Vitória, Brasil.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projetos">
+              Ver projetos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+
+        <aside class="hero__aside">
+          <div class="avatar">
+            <img src="assets/img/avatar.jpg"
+                 alt="Foto de perfil de Uriel Juliatti" width="800" height="800">
+          </div>
+          <div>
+            <h4>Stack principal</h4>
+            <p>Ruby on Rails, PostgreSQL, RSpec, Docker e APIs REST — com front-end em React e Angular quando o produto pede.</p>
+          </div>
+          <div>
+            <h4>Onde me achar</h4>
+            <p>Código aberto no GitHub, conversa no LinkedIn e e-mail sempre respondido.</p>
+            <a class="link-arrow" href="#contato">
+              Fale comigo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================= SOBRE ============================ -->
+    <section class="section section--alt" id="sobre">
+      <div class="wrap">
+        <div class="about__grid">
+          <div class="reveal">
+            <p class="eyebrow">Sobre mim</p>
+            <h2>Engenharia de software com foco em Ruby on Rails</h2>
+            <p>
+              Sou Software Engineer e trabalho principalmente com Ruby on Rails,
+              construindo APIs, sistemas de autenticação e micro SaaS do zero ao
+              deploy. Gosto de código bem testado — TDD com RSpec é parte do meu
+              fluxo diário, não um detalhe opcional.
+            </p>
+            <p>
+              Ao longo dos anos passei por back-end, front-end e mobile, o que me
+              ajuda a enxergar o produto inteiro em vez de só a minha camada.
+              Estou sempre estudando arquitetura, boas práticas de API e formas
+              de deixar o sistema mais simples de manter.
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat__value">10<span>+</span></div>
+                <p class="stat__label">Anos escrevendo software</p>
+              </div>
+              <div class="stat">
+                <div class="stat__value" id="statRepos">25<span>+</span></div>
+                <p class="stat__label">Repositórios públicos</p>
+              </div>
+              <div class="stat">
+                <div class="stat__value" id="statFollowers">57<span>+</span></div>
+                <p class="stat__label">Seguidores no GitHub</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills reveal">
+            <div class="skill-group">
+              <h4>Back-end</h4>
+              <div class="chips">
+                <span class="chip">Ruby</span>
+                <span class="chip">Ruby on Rails</span>
+                <span class="chip">REST / JSON:API</span>
+                <span class="chip">Devise &amp; JWT</span>
+                <span class="chip">Pundit</span>
+                <span class="chip">Sidekiq</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Front-end</h4>
+              <div class="chips">
+                <span class="chip">React</span>
+                <span class="chip">Angular</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Hotwire / Turbo</span>
+                <span class="chip">HTML &amp; CSS</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Dados &amp; Infra</h4>
+              <div class="chips">
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Redis</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Git</span>
+                <span class="chip">CI/CD</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Qualidade</h4>
+              <div class="chips">
+                <span class="chip">RSpec</span>
+                <span class="chip">TDD</span>
+                <span class="chip">Clean Architecture</span>
+                <span class="chip">Code Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== EXPERIÊNCIA ======================== -->
+    <section class="section" id="experiencia">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Trajetória</p>
+          <h2>Experiência</h2>
+          <p>Um resumo do caminho até aqui. <!-- TODO: ajuste períodos, empresas e descrições com os seus dados reais. --></p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline__item reveal">
+            <div class="timeline__period">Atual</div>
+            <div>
+              <h3 class="timeline__role">Software Engineer</h3>
+              <span class="timeline__org">Ruby on Rails</span>
+              <p>
+                Desenvolvimento e manutenção de aplicações Rails: modelagem de domínio,
+                APIs REST, autenticação, autorização e cobertura de testes com RSpec.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal">
+            <div class="timeline__period">Anos anteriores</div>
+            <div>
+              <h3 class="timeline__role">Desenvolvedor Full Stack</h3>
+              <span class="timeline__org">Web &amp; APIs</span>
+              <p>
+                Entrega de funcionalidades ponta a ponta, do banco de dados à interface,
+                com React e Angular no front e Rails no back.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal">
+            <div class="timeline__period">Início de carreira</div>
+            <div>
+              <h3 class="timeline__role">Desenvolvedor Android</h3>
+              <span class="timeline__org">Java / Android</span>
+              <p>
+                Aplicativos nativos integrados a APIs externas como Google Places e
+                Foursquare, cuidando de consumo de dados e experiência mobile.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROJETOS ========================== -->
+    <section class="section section--alt" id="projetos">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Portfólio</p>
+          <h2>Projetos selecionados</h2>
+          <p>Projetos públicos do meu GitHub — de micro SaaS completos a estudos focados em uma técnica específica.</p>
+        </div>
+
+        <div class="filters reveal" id="filters">
+          <button class="filter is-active" data-filter="all">Todos</button>
+          <button class="filter" data-filter="saas">Micro SaaS</button>
+          <button class="filter" data-filter="api">APIs</button>
+          <button class="filter" data-filter="front">Front-end</button>
+          <button class="filter" data-filter="ruby">Ruby</button>
+        </div>
+
+        <div class="projects" id="projects">
+
+          <article class="card reveal" data-tags="saas ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+              </div>
+            </div>
+            <h3>QuickMesa</h3>
+            <p>Micro SaaS de reservas para restaurantes: gestão de mesas, horários e confirmação de reservas.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/quickmesa" target="_blank" rel="noopener" aria-label="QuickMesa no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="saas ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+              </div>
+            </div>
+            <h3>TaskSprout</h3>
+            <p>Micro SaaS de gerenciamento de tarefas, com organização por projeto e fluxo de acompanhamento.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/tasksprout" target="_blank" rel="noopener" aria-label="TaskSprout no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="api ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+            </div>
+            <h3>Devise API</h3>
+            <p>Autenticação com Devise em modo API, incluindo um sistema completo de gestão de usuários.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/devise_api" target="_blank" rel="noopener" aria-label="Devise API no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="api ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg>
+              </div>
+            </div>
+            <h3>Notebook API</h3>
+            <p>API construída com Active Model Serializers seguindo as boas práticas da especificação JSON:API.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/notebook-api" target="_blank" rel="noopener" aria-label="Notebook API no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="api ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/></svg>
+              </div>
+            </div>
+            <h3>Rails JWT</h3>
+            <p>Tutorial prático de autenticação com Devise + JWT em Rails, do setup à emissão e revogação de tokens.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/rails-jwt-tutorial" target="_blank" rel="noopener" aria-label="Rails JWT no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg>
+              </div>
+            </div>
+            <h3>Clean RSpotify</h3>
+            <p>Reescrita da RSpotify aplicando Clean Architecture, com separação clara entre domínio e infraestrutura.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/clean_rspotify" target="_blank" rel="noopener" aria-label="Clean RSpotify no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+            </div>
+            <h3>RSpec TDD</h3>
+            <p>Material completo de TDD com RSpec: da primeira spec a mocks, stubs e refatoração guiada por testes.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/rspec-tdd" target="_blank" rel="noopener" aria-label="RSpec TDD no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="api">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+              </div>
+            </div>
+            <h3>Bookstore Microservices</h3>
+            <p>Arquitetura de livraria dividida em microsserviços, com orquestração e comunicação entre serviços.</p>
+            <div class="card__foot">
+              <span class="card__lang">Shell</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/bookstore-microservices" target="_blank" rel="noopener" aria-label="Bookstore Microservices no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="front">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8"/></svg>
+              </div>
+            </div>
+            <h3>Tour of Heroes</h3>
+            <p>Aplicação Angular completa com roteamento, serviços e formulários, publicada e acessível online.</p>
+            <div class="card__foot">
+              <span class="card__lang">TypeScript</span>
+              <span class="card__links">
+                <a href="https://tour-of-heroes-pearl.vercel.app" target="_blank" rel="noopener" aria-label="Tour of Heroes ao vivo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://github.com/urieljuliatti/tour-of-heroes" target="_blank" rel="noopener" aria-label="Tour of Heroes no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="front">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+              </div>
+            </div>
+            <h3>Aluroni</h3>
+            <p>App de restaurante em React, com listagem de cardápio, filtros e navegação entre pratos.</p>
+            <div class="card__foot">
+              <span class="card__lang">React</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/aluroni" target="_blank" rel="noopener" aria-label="Aluroni no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="front">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              </div>
+            </div>
+            <h3>Angular Articles</h3>
+            <p>CRUD completo de artigos em Angular com Bootstrap, cobrindo formulários, validação e listagem.</p>
+            <div class="card__foot">
+              <span class="card__lang">TypeScript</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/angular-articles-bootstrap" target="_blank" rel="noopener" aria-label="Angular Articles no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ruby">
+            <div class="card__top">
+              <div class="card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              </div>
+            </div>
+            <h3>Phone Numbers</h3>
+            <p>Formatador de números de telefone em Ruby puro, sem dependências externas.</p>
+            <div class="card__foot">
+              <span class="card__lang">Ruby</span>
+              <span class="card__links">
+                <a href="https://github.com/urieljuliatti/phone_numbers" target="_blank" rel="noopener" aria-label="Phone Numbers no GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+                </a>
+              </span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects-more reveal">
+          <a class="btn btn--ghost" href="https://github.com/urieljuliatti?tab=repositories" target="_blank" rel="noopener">
+            Ver todos os repositórios no GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTATO =========================== -->
+    <section class="section" id="contato">
+      <div class="wrap">
+        <div class="reveal">
+          <hr class="rule">
+          <h2>Vamos trabalhar juntos</h2>
+        </div>
+
+        <div class="contact__grid" style="margin-top: 48px;">
+          <div class="reveal">
+            <h3 style="margin-bottom: 1rem;">Entre em contato</h3>
+            <p style="max-width: 40ch;">
+              Aberto a oportunidades, freelas e conversas sobre Ruby, Rails e
+              arquitetura de software. Costumo responder rápido.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <a href="mailto:uriel.juliattivalle@gmail.com">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                  uriel.juliattivalle@gmail.com
+                </a>
+              </li>
+              <li>
+                <span>
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Vitória, Brasil
+                </span>
+              </li>
+            </ul>
+
+            <div class="socials">
+              <a href="https://github.com/urieljuliatti" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+              </a>
+              <!-- TODO: troque pela URL real do seu LinkedIn -->
+              <a href="https://www.linkedin.com/in/urieljuliatti/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg>
+              </a>
+              <a href="mailto:uriel.juliattivalle@gmail.com" aria-label="E-mail">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulário sem back-end: abre o cliente de e-mail do visitante.
+               Para receber direto na caixa, troque por Formspree/Getform. -->
+          <form class="contact-card reveal" id="contactForm">
+            <div class="field">
+              <label for="name">Seu nome</label>
+              <input type="text" id="name" name="name" placeholder="Como devo te chamar?" required>
+            </div>
+            <div class="field">
+              <label for="email">Seu e-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+            </div>
+            <div class="field">
+              <label for="subject">Assunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Sobre o que quer falar?" required>
+            </div>
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">
+              Enviar mensagem
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <span>&copy; <span id="year">2026</span> Uriel Juliatti. Todos os direitos reservados.</span>
+      <span>Feito com HTML, CSS e JavaScript · hospedado no GitHub Pages</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
