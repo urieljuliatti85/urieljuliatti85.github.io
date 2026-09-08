@@ -36,5 +36,6 @@ chamar `<usuario>.github.io`. Em qualquer outro nome, o site é servido em
 
 ## Foto de perfil
 
-`assets/img/avatar.jpg` é um recorte quadrado (800x800) da foto original,
-enquadrado no rosto para funcionar bem no avatar circular do topo.
+`assets/img/avatar.jpg` é um recorte quadrado (900x900) da foto original,
+aberto o suficiente para mostrar a guitarra e mantendo o rosto nítido no
+avatar circular do topo.
