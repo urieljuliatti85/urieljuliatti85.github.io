@@ -139,21 +139,74 @@
 
   /* ------------------------- Formulário ---------------------------- */
   var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  var submit = document.getElementById('contactSubmit');
+  var MAIL = 'uriel.juliattivalle@gmail.com';
+
+  function say(msg, kind) {
+    if (!status) return;
+    status.textContent = msg;
+    status.className = 'form-status' + (kind ? ' is-' + kind : '');
+  }
+
+  // Enquanto o id do Formspree não for configurado, cai no mailto.
+  function mailtoFallback(data) {
+    var subject = encodeURIComponent(data.get('subject') || 'Contato pelo portfólio');
+    var body = encodeURIComponent(
+      'Nome: ' + (data.get('name') || '') + '\n' +
+      'E-mail: ' + (data.get('email') || '') + '\n\n' +
+      (data.get('message') || '')
+    );
+    window.location.href = 'mailto:' + MAIL + '?subject=' + subject + '&body=' + body;
+  }
 
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       var data = new FormData(form);
-      var subject = encodeURIComponent(data.get('subject') || 'Contato pelo portfólio');
-      var body = encodeURIComponent(
-        'Nome: ' + (data.get('name') || '') + '\n' +
-        'E-mail: ' + (data.get('email') || '') + '\n\n' +
-        (data.get('message') || '')
-      );
+      var action = form.getAttribute('action') || '';
 
-      window.location.href =
-        'mailto:uriel.juliattivalle@gmail.com?subject=' + subject + '&body=' + body;
+      if (action.indexOf('SEU_FORM_ID') !== -1) {
+        say('Abrindo seu app de e-mail…');
+        mailtoFallback(data);
+        return;
+      }
+
+      if (submit) { submit.disabled = true; }
+      say('Enviando…');
+
+      fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (r) {
+          if (r.ok) {
+            form.reset();
+            say('Mensagem enviada. Obrigado — respondo em breve!', 'ok');
+          } else {
+            return r.json().then(function (d) {
+              var msg = d && d.errors && d.errors.length
+                ? d.errors.map(function (x) { return x.message; }).join(', ')
+                : 'Não consegui enviar agora.';
+              var e2 = new Error(msg);
+              e2.friendly = true;
+              throw e2;
+            });
+          }
+        })
+        .catch(function (err) {
+          // Erro de validação do Formspree traz mensagem própria;
+          // falha de rede vira "Failed to fetch", que não diz nada ao visitante.
+          var msg = err && err.friendly
+            ? err.message
+            : 'Não consegui enviar agora.';
+          say(msg + ' Escreva direto para ' + MAIL + '.', 'error');
+        })
+        .finally(function () {
+          if (submit) { submit.disabled = false; }
+        });
     });
   }
 })();

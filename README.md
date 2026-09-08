@@ -44,9 +44,21 @@ Para trocar a playlist, substitua o ID em dois lugares no `index.html`
 
 ## O que ainda dá para personalizar
 
-- **Formulário**: hoje abre o cliente de e-mail do visitante. Para receber as
-  mensagens direto na caixa de entrada, aponte o `action` do form para um
-  serviço como Formspree ou Getform.
+## Formulário de contato
+
+O formulário envia via [Formspree](https://formspree.io) — GitHub Pages é
+estático e não processa POST por conta própria.
+
+**Falta ativar:** crie uma conta gratuita (50 envios/mês), adicione um
+formulário apontando para `uriel.juliattivalle@gmail.com` e troque
+`SEU_FORM_ID` no `index.html` pelo id que eles fornecem (algo como
+`xanbqkzy`). Confirme o e-mail no primeiro envio.
+
+Enquanto o id não for trocado, o formulário cai no `mailto:` — que só
+funciona para quem tem um cliente de e-mail configurado no dispositivo.
+
+O campo `_gotcha` é uma isca anti-spam: fica oculto, e envios que o
+preencherem são descartados pelo Formspree.
 
 ## Foto de perfil
 

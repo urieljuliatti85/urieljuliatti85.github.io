@@ -945,6 +945,22 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .field input::placeholder,
 .field textarea::placeholder { color: var(--text-dim); }
 
+/* Status do formulário de contato */
+.form-status {
+  margin: 1rem 0 0;
+  min-height: 1.4em;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.form-status.is-ok    { color: #9ae86f; }
+.form-status.is-error { color: #e8785f; }
+
+.contact-card button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
 /* ----------------------------- Lightbox ------------------------ */
 .lightbox {
   width: min(94vw, 1200px);

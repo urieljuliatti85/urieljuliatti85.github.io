@@ -797,7 +797,10 @@
 
           <!-- Formulário sem back-end: abre o cliente de e-mail do visitante.
                Para receber direto na caixa, troque por Formspree/Getform. -->
-          <form class="contact-card reveal" id="contactForm">
+          <!-- Para ativar: crie um formulário em formspree.io e troque
+               SEU_FORM_ID abaixo pelo id que eles fornecem (ex.: xanbqkzy). -->
+          <form class="contact-card reveal" id="contactForm"
+                action="https://formspree.io/f/SEU_FORM_ID" method="POST">
             <div class="field">
               <label for="name">Seu nome</label>
               <input type="text" id="name" name="name" placeholder="Como devo te chamar?" required>
@@ -814,10 +817,15 @@
               <label for="message">Mensagem</label>
               <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
             </div>
-            <button class="btn btn--primary" type="submit">
+            <!-- Campo isca: humanos não veem, bots preenchem e são barrados. -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" hidden>
+
+            <button class="btn btn--primary" type="submit" id="contactSubmit">
               Enviar mensagem
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
