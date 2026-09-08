@@ -470,8 +470,8 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 /* ------------------------ Projeto em destaque ------------------- */
 .featured {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
-  gap: clamp(28px, 4vw, 56px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: clamp(28px, 4vw, 48px);
   margin-bottom: 48px;
   padding: clamp(30px, 4vw, 48px);
   background:
@@ -586,18 +586,47 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   gap: 14px;
 }
 
+.featured__side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured__shot {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.featured__shot:hover {
+  border-color: rgba(11, 95, 255, 0.55);
+  transform: translateY(-3px);
+}
+
+.featured__shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .featured__meta {
   display: grid;
-  align-content: start;
-  gap: 22px;
-  padding-left: clamp(20px, 3vw, 36px);
-  border-left: 1px solid var(--line);
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
 }
 
 .featured__stat-value {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: 1.55rem;
   font-weight: 700;
   line-height: 1;
   color: var(--accent);
@@ -907,13 +936,10 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
   .featured { grid-template-columns: 1fr; }
 
+
   .featured__meta {
-    grid-auto-flow: column;
     justify-content: start;
-    gap: 36px;
-    padding: 22px 0 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
+    gap: 32px;
   }
 
   .hero__aside { order: -1; }
