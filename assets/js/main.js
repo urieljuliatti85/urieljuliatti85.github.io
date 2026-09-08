@@ -111,6 +111,32 @@
       .catch(function () { /* mantém os valores estáticos do HTML */ });
   }
 
+  /* --------------------- Lightbox das imagens ---------------------- */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+
+  if (lightbox && lightboxImg && typeof lightbox.showModal === 'function') {
+    document.querySelectorAll('[data-lightbox]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var img = trigger.querySelector('img');
+        lightboxImg.src = trigger.dataset.lightbox;
+        lightboxImg.alt = img ? img.alt : '';
+        lightbox.showModal();
+      });
+    });
+
+    lightbox.querySelector('.lightbox__close')
+      .addEventListener('click', function () { lightbox.close(); });
+
+    // clique fora da imagem fecha
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) lightbox.close();
+    });
+
+    // libera a imagem da memória ao fechar
+    lightbox.addEventListener('close', function () { lightboxImg.src = ''; });
+  }
+
   /* ------------------------- Formulário ---------------------------- */
   var form = document.getElementById('contactForm');
 
