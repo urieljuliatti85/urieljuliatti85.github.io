@@ -193,7 +193,29 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* -------------------------------- Hero ------------------------- */
-.hero { padding: clamp(60px, 9vw, 120px) 0 clamp(70px, 10vw, 130px); }
+.hero {
+  position: relative;
+  padding: clamp(60px, 9vw, 120px) 0 clamp(70px, 10vw, 130px);
+  isolation: isolate;
+}
+
+/* Chuva de código ao fundo, bem discreta e dissolvida para baixo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../img/matrix.jpg");
+  background-size: 480px auto;
+  background-repeat: repeat;
+  background-position: top center;
+  opacity: 0.15;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.55) 45%, transparent 92%);
+          mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.55) 45%, transparent 92%);
+  pointer-events: none;
+}
+
+.hero > * { position: relative; }
 
 .hero__grid {
   display: grid;
