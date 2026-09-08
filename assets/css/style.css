@@ -481,9 +481,22 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   border-radius: 20px;
 }
 
+.featured__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.featured__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
 .featured__badge {
   display: inline-block;
-  margin-bottom: 1rem;
   padding: 6px 14px;
   border-radius: 999px;
   background: var(--accent);
@@ -498,7 +511,6 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin: 0 0 1rem 8px;
   padding: 6px 14px;
   border: 1px solid rgba(245, 173, 66, 0.45);
   border-radius: 999px;
@@ -584,6 +596,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-top: auto;
 }
 
 .featured__side {
