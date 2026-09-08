@@ -53,7 +53,7 @@
       <div class="wrap hero__grid">
         <div>
           <hr class="rule">
-          <h1>Olá, sou o Uriel,<br><span class="accent">Software Engineer</span></h1>
+          <h1>Olá, sou o Uriel Juliatti,<br><span class="accent">Software Engineer</span></h1>
           <p class="hero__lead">
             Construo aplicações web e APIs com Ruby on Rails, com foco em código
             testado, arquitetura limpa e produtos que resolvem problema de verdade.
@@ -370,8 +370,65 @@
         <div class="section__head reveal">
           <p class="eyebrow">Portfólio</p>
           <h2>Projetos selecionados</h2>
-          <p>Projetos públicos do meu GitHub — de micro SaaS completos a estudos focados em uma técnica específica.</p>
+          <p>Começando pelo EloShop, meu projeto principal em produção, seguido de outros trabalhos públicos — de micro SaaS completos a estudos focados em uma técnica específica.</p>
         </div>
+
+        <article class="featured reveal">
+          <div class="featured__body">
+            <span class="featured__badge">Projeto em destaque</span>
+            <h3 class="featured__title">EloShop</h3>
+            <p class="featured__lead">
+              E-commerce e marketplace dedicado a quem fabrica artesanato e
+              produtos feitos à mão. Projeto completo em produção, construído
+              com a stack mais recente do Rails.
+            </p>
+
+            <ul class="featured__points">
+              <li>Loja e checkout com integração de pagamentos via <strong>Mercado Pago</strong></li>
+              <li>Área administrativa própria para ateliês, catálogo e pedidos</li>
+              <li><strong>API pública v1</strong> documentada em OpenAPI, com Swagger UI em <code>/api-docs</code></li>
+              <li>CI com RSpec, testes de sistema, <strong>Brakeman</strong>, bundler-audit e CodeQL</li>
+              <li>Monitoramento de erros em produção com GlitchTip</li>
+            </ul>
+
+            <div class="featured__stack">
+              <span class="tag">Rails 8.1</span>
+              <span class="tag">Ruby 3.3</span>
+              <span class="tag">Hotwire</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">PostgreSQL 16</span>
+              <span class="tag">Solid Queue / Cache / Cable</span>
+              <span class="tag">RSpec + rswag</span>
+              <span class="tag">Docker</span>
+            </div>
+
+            <div class="featured__actions">
+              <a class="btn btn--primary" href="https://eloshop-web-production.up.railway.app/" target="_blank" rel="noopener">
+                Ver o projeto no ar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="https://github.com/urieljuliatti85/eloshop" target="_blank" rel="noopener">
+                Código no GitHub
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="featured__meta">
+            <div class="featured__stat">
+              <span class="featured__stat-value">242</span>
+              <span class="featured__stat-label">commits</span>
+            </div>
+            <div class="featured__stat">
+              <span class="featured__stat-value">7</span>
+              <span class="featured__stat-label">linguagens</span>
+            </div>
+            <div class="featured__stat">
+              <span class="featured__stat-value">Ativo</span>
+              <span class="featured__stat-label">em produção</span>
+            </div>
+          </aside>
+        </article>
 
         <div class="filters reveal" id="filters">
           <button class="filter is-active" data-filter="all">Todos</button>

@@ -448,6 +448,128 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   color: var(--text-dim);
 }
 
+/* ------------------------ Projeto em destaque ------------------- */
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: clamp(28px, 4vw, 56px);
+  margin-bottom: 48px;
+  padding: clamp(30px, 4vw, 48px);
+  background:
+    linear-gradient(135deg, rgba(11, 95, 255, 0.11), transparent 55%),
+    var(--surface);
+  border: 1px solid rgba(11, 95, 255, 0.32);
+  border-radius: 20px;
+}
+
+.featured__badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.featured__title {
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  margin-bottom: 0.6rem;
+}
+
+.featured__lead {
+  max-width: 58ch;
+  font-size: 1.03rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured__points {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0 0 1.6rem;
+}
+
+.featured__points li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.featured__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 12px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.featured__points strong { color: var(--text); font-weight: 600; }
+
+.featured__points code {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.featured__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.8rem;
+}
+
+.featured__stack .tag {
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.featured__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.featured__meta {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding-left: clamp(20px, 3vw, 36px);
+  border-left: 1px solid var(--line);
+}
+
+.featured__stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.featured__stat-label {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
 /* ---------------------------- Projetos ------------------------- */
 .filters {
   display: flex;
@@ -739,6 +861,17 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   .about__grid,
   .playlist__grid,
   .contact__grid { grid-template-columns: 1fr; }
+
+  .featured { grid-template-columns: 1fr; }
+
+  .featured__meta {
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 36px;
+    padding: 22px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
 
   .hero__aside { order: -1; }
   .avatar { max-width: 260px; }
