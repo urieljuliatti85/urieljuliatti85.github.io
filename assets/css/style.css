@@ -494,6 +494,30 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   text-transform: uppercase;
 }
 
+.featured__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 1rem 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(245, 173, 66, 0.45);
+  border-radius: 999px;
+  background: rgba(245, 173, 66, 0.12);
+  color: #f5ad42;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.featured__status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
 .featured__title {
   font-size: clamp(1.9rem, 3.4vw, 2.7rem);
   margin-bottom: 0.6rem;
