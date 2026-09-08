@@ -26,6 +26,16 @@ Para o site ficar em `https://<usuario>.github.io/`, o repositório precisa se
 chamar `<usuario>.github.io`. Em qualquer outro nome, o site é servido em
 `https://<usuario>.github.io/<repositorio>/`.
 
+## Playlist do Spotify
+
+A seção `#playlist` embute o player oficial do Spotify via iframe, apontando
+para a playlist pública "Scandinavian Rock & Roll". Não exige API key nem
+login: quem não tem conta ouve prévias de 30s, quem está logado ouve completo.
+
+Para trocar a playlist, substitua o ID em dois lugares no `index.html`
+(o `src` do iframe e o link "Abrir no Spotify"). A playlist precisa ser
+**pública**, caso contrário o player aparece vazio para os visitantes.
+
 ## O que ainda dá para personalizar
 
 - Seção **Experiência**: períodos, empresas e descrições (marcadas com `TODO` no HTML).

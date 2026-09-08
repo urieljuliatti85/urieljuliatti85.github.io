@@ -518,6 +518,29 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .projects-more { margin-top: 44px; text-align: center; }
 
+/* ---------------------------- Playlist ------------------------- */
+.playlist__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
+  gap: clamp(40px, 6vw, 70px);
+  align-items: center;
+}
+
+.playlist__grid p { max-width: 44ch; }
+
+.playlist__player {
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.playlist__player iframe {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+}
+
 /* ----------------------------- Contato ------------------------- */
 .contact__grid {
   display: grid;
@@ -658,6 +681,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
   .hero__grid,
   .about__grid,
+  .playlist__grid,
   .contact__grid { grid-template-columns: 1fr; }
 
   .hero__aside { order: -1; }
