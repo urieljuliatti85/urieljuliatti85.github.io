@@ -213,7 +213,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   background-size: 480px auto;
   background-repeat: repeat;
   background-position: top center;
-  opacity: 0.15;
+  opacity: 0.30;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.55) 45%, transparent 92%);
           mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.55) 45%, transparent 92%);
   pointer-events: none;
