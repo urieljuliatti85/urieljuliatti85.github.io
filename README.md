@@ -20,11 +20,17 @@ python3 -m http.server 8000
 
 ## Publicar no GitHub Pages
 
-Settings → Pages → Source: `Deploy from a branch` → branch `main` / pasta `/ (root)`.
+O repositório se chama `urieljuliatti85.github.io`, então o site é publicado
+como **site de usuário**, na raiz do domínio:
 
-Para o site ficar em `https://<usuario>.github.io/`, o repositório precisa se
-chamar `<usuario>.github.io`. Em qualquer outro nome, o site é servido em
-`https://<usuario>.github.io/<repositorio>/`.
+    https://urieljuliatti85.github.io/
+
+Para ativar: Settings → Pages → Source: `Deploy from a branch` → branch `main`
+/ pasta `/ (root)`.
+
+Se um dia o repositório for renomeado, o site passa a ser servido em
+`https://urieljuliatti85.github.io/<nome-do-repo>/`; nesse caso atualize
+também a tag `canonical` e a `og:image` no `index.html`.
 
 ## Playlist do Spotify
 
