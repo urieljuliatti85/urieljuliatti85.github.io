@@ -1,13 +1,13 @@
 /* =============================================================
    Uriel Juliatti — Portfólio
    Estrutura e tipografia inspiradas nos templates de referência.
-   Paleta derivada de uma ilustração de Henrique Vieira:
-   verde-sálvia, coral, vermelho profundo e creme.
+   Base terrosa derivada de uma ilustração de Henrique Vieira
+   (verde-sálvia, vermelho profundo e creme), com verde como destaque.
    ============================================================= */
 
 :root {
-  /* Paleta extraída da ilustração de Henrique Vieira:
-     verde-sálvia, coral, vermelho profundo e creme. */
+  /* Fundos e neutros amostrados da ilustração de Henrique Vieira;
+     verde como cor de destaque. */
   --bg:            #171a13;
   --bg-alt:        #1d211a;
   --bg-rail:       #2a2e24;
@@ -17,8 +17,8 @@
   --text:          #f4f1d8;
   --text-muted:    #a8ab92;
   --text-dim:      #8b8f75;
-  --accent:        #e8895a;
-  --accent-soft:   rgba(232, 137, 90, 0.15);
+  --accent:        #41ad23;
+  --accent-soft:   rgba(65, 173, 35, 0.15);
   --sage:          #7d9a80;
   --deep-red:      #c31c12;
 
@@ -137,10 +137,14 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 }
 
 .brand__mark {
+  display: inline-flex;
   color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  font-weight: 700;
+}
+
+.brand__mark svg {
+  width: 38px;
+  height: 32px;
+  display: block;
 }
 
 .nav { display: flex; align-items: center; gap: 34px; }
@@ -291,7 +295,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .btn:hover { transform: translateY(-2px); }
 
 .btn--primary { background: var(--accent); color: #1a1d14; }
-.btn--primary:hover { background: #f0a074; }
+.btn--primary:hover { background: #4dc42a; }
 
 .btn--ghost { border-color: var(--line); color: var(--text); }
 .btn--ghost:hover { border-color: var(--text); background: rgba(255, 255, 255, 0.04); }
@@ -503,9 +507,9 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   margin-bottom: 48px;
   padding: clamp(30px, 4vw, 48px);
   background:
-    linear-gradient(135deg, rgba(232, 137, 90, 0.12), transparent 55%),
+    linear-gradient(135deg, rgba(65, 173, 35, 0.12), transparent 55%),
     var(--surface);
-  border: 1px solid rgba(232, 137, 90, 0.34);
+  border: 1px solid rgba(65, 173, 35, 0.34);
   border-radius: 20px;
 }
 
@@ -540,10 +544,10 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   align-items: center;
   gap: 7px;
   padding: 6px 14px;
-  border: 1px solid rgba(195, 28, 18, 0.55);
+  border: 1px solid rgba(154, 232, 111, 0.45);
   border-radius: 999px;
-  background: rgba(195, 28, 18, 0.16);
-  color: #e06a4c;
+  background: rgba(154, 232, 111, 0.14);
+  color: #9ae86f;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
@@ -643,7 +647,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 }
 
 .featured__shot:hover {
-  border-color: rgba(232, 137, 90, 0.55);
+  border-color: rgba(65, 173, 35, 0.55);
   transform: translateY(-3px);
 }
 
@@ -731,7 +735,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(232, 137, 90, 0.5);
+  border-color: rgba(65, 173, 35, 0.5);
   background: var(--surface-2);
 }
 
