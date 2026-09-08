@@ -44,8 +44,6 @@ Para trocar a playlist, substitua o ID em dois lugares no `index.html`
 
 ## O que ainda dá para personalizar
 
-- Seção **Experiência**: períodos, empresas e descrições (marcadas com `TODO` no HTML).
-- URL do **LinkedIn** na seção de contato.
 - **Formulário**: hoje abre o cliente de e-mail do visitante. Para receber as
   mensagens direto na caixa de entrada, aponte o `action` do form para um
   serviço como Formspree ou Getform.
