@@ -247,12 +247,14 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   border-top: 1px solid var(--line);
 }
 
-.hero__aside h4 {
+.hero__aside .aside-label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 0.85rem;
+  color: var(--text);
+  font-weight: 600;
+  margin: 0 0 0.85rem;
 }
 
 .hero__aside p { font-size: 0.95rem; }
@@ -388,7 +390,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 /* ------------------------------ Skills ------------------------- */
 .skills { display: grid; gap: 28px; }
 
-.skill-group h4 {
+.skill-group h3 {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
