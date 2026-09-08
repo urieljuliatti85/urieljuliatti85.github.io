@@ -225,6 +225,25 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .hero__aside p { font-size: 0.95rem; }
 
+/* Stack do hero: lista separada por barras */
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.stack-list li { line-height: 1.9; }
+
+.stack-list li + li::before {
+  content: "|";
+  margin-right: 10px;
+  color: var(--accent);
+  opacity: 0.55;
+}
+
 /* ------------------------------ Botões ------------------------- */
 .btn {
   display: inline-flex;
