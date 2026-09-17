@@ -1,67 +1,42 @@
-# Portfólio — Uriel Juliatti
+# Pick Up Your Epic!
 
-Site pessoal estático (HTML + CSS + JavaScript, sem build) hospedado no GitHub Pages.
+Pick Up Your Epic! is a social platform for discovering
+and collecting the most important moments in music.
 
-## Estrutura
+Users connect their Spotify account, select a specific
+moment from a track and save it as an Epic.
 
-```
-index.html          Página única com todas as seções
-assets/css/style.css  Estilos e paleta
-assets/js/main.js     Menu, scrollspy, filtros, reveal, formulário
-.nojekyll             Impede o processamento pelo Jekyll
-```
+Other users can discover, listen to and Pick those Epics.
 
-## Rodar localmente
+---
+
+## Stack
+
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+- Hotwire
+- Turbo
+- Stimulus
+- Tailwind CSS
+- Minitest
+- Capybara
+
+---
+
+# Requirements
+
+- Ruby: X.X.X
+- Rails: X.X.X
+- PostgreSQL: X.X
+- Node/Bun/etc: X.X.X if required
+
+---
+
+# Setup
+
+Clone the repository:
 
 ```bash
-python3 -m http.server 8000
-# abra http://localhost:8000
-```
-
-## Publicar no GitHub Pages
-
-O repositório se chama `urieljuliatti85.github.io`, então o site é publicado
-como **site de usuário**, na raiz do domínio:
-
-    https://urieljuliatti85.github.io/
-
-Para ativar: Settings → Pages → Source: `Deploy from a branch` → branch `main`
-/ pasta `/ (root)`.
-
-Se um dia o repositório for renomeado, o site passa a ser servido em
-`https://urieljuliatti85.github.io/<nome-do-repo>/`; nesse caso atualize
-também a tag `canonical` e a `og:image` no `index.html`.
-
-## Playlist do Spotify
-
-A seção `#playlist` embute o player oficial do Spotify via iframe, apontando
-para a playlist pública "Scandinavian Rock & Roll". Não exige API key nem
-login: quem não tem conta ouve prévias de 30s, quem está logado ouve completo.
-
-Para trocar a playlist, substitua o ID em dois lugares no `index.html`
-(o `src` do iframe e o link "Abrir no Spotify"). A playlist precisa ser
-**pública**, caso contrário o player aparece vazio para os visitantes.
-
-## O que ainda dá para personalizar
-
-## Formulário de contato
-
-O formulário envia via [Formspree](https://formspree.io) — GitHub Pages é
-estático e não processa POST por conta própria.
-
-Está ativo no plano gratuito (50 envios/mês). O `action` do form no
-`index.html` aponta para o endpoint; para trocar de conta, basta
-substituir o id na URL.
-
-Se o `action` voltar a conter `SEU_FORM_ID`, o formulário cai no
-`mailto:` como alternativa — que só funciona para quem tem um cliente
-de e-mail configurado no dispositivo.
-
-O campo `_gotcha` é uma isca anti-spam: fica oculto, e envios que o
-preencherem são descartados pelo Formspree.
-
-## Foto de perfil
-
-`assets/img/avatar.jpg` é um recorte quadrado (900x900) da foto original,
-aberto o suficiente para mostrar a guitarra e mantendo o rosto nítido no
-avatar circular do topo.
+git clone ...
+cd pick-up-your-epic
