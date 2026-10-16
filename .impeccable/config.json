@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-16T11:22:56.151Z",
+        "reason": "Claude: lightbox #lightboxImg starts empty by design; main.js sets src on open and clears it on close"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "en/index.html"
+        ],
+        "createdAt": "2026-10-16T11:22:56.176Z",
+        "reason": "Claude: same lightbox #lightboxImg, empty until main.js sets src"
+      }
+    ]
+  }
+}

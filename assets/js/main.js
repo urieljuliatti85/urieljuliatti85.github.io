@@ -4,6 +4,32 @@
 (function () {
   'use strict';
 
+  /* ----------------------- Textos por idioma ----------------------- */
+  var EN = (document.documentElement.lang || '').indexOf('en') === 0;
+  var T = EN ? {
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    defaultSubject: 'Contact from portfolio',
+    name: 'Name',
+    email: 'E-mail',
+    opening: 'Opening your e-mail app…',
+    sending: 'Sending…',
+    sent: "Message sent. Thanks — I'll get back to you soon!",
+    failed: "Couldn't send it right now.",
+    writeTo: 'Write directly to '
+  } : {
+    openMenu: 'Abrir menu',
+    closeMenu: 'Fechar menu',
+    defaultSubject: 'Contato pelo portfólio',
+    name: 'Nome',
+    email: 'E-mail',
+    opening: 'Abrindo seu app de e-mail…',
+    sending: 'Enviando…',
+    sent: 'Mensagem enviada. Obrigado — respondo em breve!',
+    failed: 'Não consegui enviar agora.',
+    writeTo: 'Escreva direto para '
+  };
+
   /* ------------------------- Ano no rodapé ------------------------- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
@@ -16,14 +42,14 @@
     if (!nav || !toggle) return;
     nav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu');
+    toggle.setAttribute('aria-label', T.openMenu);
   }
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      toggle.setAttribute('aria-label', open ? T.closeMenu : T.openMenu);
     });
 
     nav.addEventListener('click', function (e) {
@@ -37,7 +63,7 @@
 
   /* ---------------- Header: borda ao rolar + scrollspy -------------- */
   var header = document.getElementById('header');
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
   var sections = links
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
     .filter(Boolean);
@@ -151,10 +177,10 @@
 
   // Enquanto o id do Formspree não for configurado, cai no mailto.
   function mailtoFallback(data) {
-    var subject = encodeURIComponent(data.get('subject') || 'Contato pelo portfólio');
+    var subject = encodeURIComponent(data.get('subject') || T.defaultSubject);
     var body = encodeURIComponent(
-      'Nome: ' + (data.get('name') || '') + '\n' +
-      'E-mail: ' + (data.get('email') || '') + '\n\n' +
+      T.name + ': ' + (data.get('name') || '') + '\n' +
+      T.email + ': ' + (data.get('email') || '') + '\n\n' +
       (data.get('message') || '')
     );
     window.location.href = 'mailto:' + MAIL + '?subject=' + subject + '&body=' + body;
@@ -168,13 +194,13 @@
       var action = form.getAttribute('action') || '';
 
       if (action.indexOf('SEU_FORM_ID') !== -1) {
-        say('Abrindo seu app de e-mail…');
+        say(T.opening);
         mailtoFallback(data);
         return;
       }
 
       if (submit) { submit.disabled = true; }
-      say('Enviando…');
+      say(T.sending);
 
       fetch(action, {
         method: 'POST',
@@ -184,12 +210,12 @@
         .then(function (r) {
           if (r.ok) {
             form.reset();
-            say('Mensagem enviada. Obrigado — respondo em breve!', 'ok');
+            say(T.sent, 'ok');
           } else {
             return r.json().then(function (d) {
               var msg = d && d.errors && d.errors.length
                 ? d.errors.map(function (x) { return x.message; }).join(', ')
-                : 'Não consegui enviar agora.';
+                : T.failed;
               var e2 = new Error(msg);
               e2.friendly = true;
               throw e2;
@@ -201,8 +227,8 @@
           // falha de rede vira "Failed to fetch", que não diz nada ao visitante.
           var msg = err && err.friendly
             ? err.message
-            : 'Não consegui enviar agora.';
-          say(msg + ' Escreva direto para ' + MAIL + '.', 'error');
+            : T.failed;
+          say(msg + ' ' + T.writeTo + MAIL + '.', 'error');
         })
         .finally(function () {
           if (submit) { submit.disabled = false; }

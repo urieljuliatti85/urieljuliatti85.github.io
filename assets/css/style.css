@@ -172,6 +172,19 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .nav a:hover::after,
 .nav a.is-active::after { width: 100%; }
 
+.nav a.nav__lang {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.nav a.nav__lang::after { display: none; }
+.nav a.nav__lang:hover { color: var(--text); border-color: var(--accent); }
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -1072,6 +1085,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
   .nav.is-open { transform: none; }
   .nav a { display: block; width: 100%; padding: 12px 0; font-size: 1.1rem; }
+  .nav a.nav__lang { width: auto; margin-top: 8px; padding: 8px 16px; }
 
   .hero__grid,
   .about__grid,
