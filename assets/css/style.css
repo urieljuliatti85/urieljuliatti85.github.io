@@ -528,6 +528,11 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   border-radius: 20px;
 }
 
+/* Projeto sem screenshot: uma coluna só */
+.featured--solo { grid-template-columns: minmax(0, 1fr); }
+.featured--solo .featured__points { max-width: 72ch; }
+.featured--solo .featured__stack:last-child { margin-bottom: 0; }
+
 .featured__body {
   display: flex;
   flex-direction: column;
