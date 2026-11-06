@@ -124,6 +124,204 @@
       </div>
     </section>
 
+    <!-- ======================== LATEST PROJECT ======================== -->
+    <section class="section" id="highlight">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Highlight</p>
+          <h2>Latest published project</h2>
+        </div>
+
+        <article class="featured reveal">
+          <div class="featured__body">
+            <div class="featured__badges">
+              <span class="featured__badge">Featured project</span>
+              <span class="featured__status">In production</span>
+            </div>
+            <h3 class="featured__title">EloShop</h3>
+            <p class="featured__lead">
+              Marketplace for makers of crafts and handmade products, with
+              multiple sellers and payment splitting through Mercado Pago.
+              I designed, built and shipped it to production on my own.
+            </p>
+
+            <ul class="featured__points">
+              <li>Payment splitting through <strong>Mercado Pago</strong>: PIX and card, OAuth, idempotent webhooks and refunds that proportionally return the commission</li>
+              <li><strong>Checkout that stays safe under concurrency</strong>, with locks, idempotency and a copy of the purchase data stored in the order</li>
+              <li>Seller dashboard isolated by session and shipping integrated with <strong>SuperFrete</strong></li>
+              <li><strong>REST API</strong> documented with OpenAPI, with Swagger UI at <code>/api-docs</code></li>
+              <li>Catalog latency cut from <strong>about 1.3 s to about 10 ms</strong> after diagnosing a PostgreSQL JIT cost</li>
+              <li>CI/CD with GitHub Actions and Railway, two automated test suites and observability with <strong>Sentry</strong></li>
+            </ul>
+
+            <details class="featured__details">
+              <summary>See full details</summary>
+              <div class="featured__detail">
+                <h4>Multi-seller marketplace</h4>
+                <ul class="featured__points">
+                  <li>Maker sign-up with admin approval and identity verification (KYC) handled by Mercado Pago via OAuth. The platform stores no documents and tokens are encrypted.</li>
+                  <li>Workshop dashboard: catalog, variants, images, customizations, orders, buyer messages, reviews, store theme, guided onboarding and versioned commercial terms.</li>
+                  <li>Each seller sees only their own data, because the scope comes from the session and never from the URL. Tests cover attempts to swap IDs in the URL.</li>
+                  <li>Public page for each workshop, a storefront and a pre-registration mode: platform sales stay closed until the admin opens them.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>Catalog</h4>
+                <ul class="featured__points">
+                  <li>Regular stock, one-of-a-kind and made-to-order products, with production lead times.</li>
+                  <li>Variants that represent real commercial combinations, customizations stored in the order, materials, techniques, hierarchical categories and tags.</li>
+                  <li>A single rule decides whether a product is available.</li>
+                  <li>Search and filters built on PostgreSQL itself, with images optimized through variants and lazy loading.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>Cart and checkout</h4>
+                <ul class="featured__points">
+                  <li>Guest cart (via signed cookie) and logged-in customer cart.</li>
+                  <li>Checkout in a transaction with locks taken in a fixed order to avoid deadlocks. This keeps a one-of-a-kind piece from being sold twice when two people buy at the same time.</li>
+                  <li>Protection against duplicate orders (idempotency key with a unique index).</li>
+                  <li>The order keeps a copy of price, SKU, variant, customization and address.</li>
+                  <li>Coupons with usage limits protected against concurrency. The server recalculates every amount and does not trust what the browser sends.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>Payments (Mercado Pago)</h4>
+                <ul class="featured__points">
+                  <li>PIX and credit card (Card Payment Brick), validated end to end in production.</li>
+                  <li>Automatic split with a platform commission (15%, or 8% in the first 3 months), with amounts in integer cents and arithmetic validated on save.</li>
+                  <li>Authenticated webhooks that can arrive repeatedly without duplicate effects. The gateway is isolated behind an interface, so it can be swapped.</li>
+                  <li>Full and partial refunds with proportional commission return, reconciliation and chargeback handling.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>Shipping (SuperFrete)</h4>
+                <ul class="featured__points">
+                  <li>Workshop connection via OAuth, external quotes, fixed shipping per product and local pickup.</li>
+                  <li>Label purchase from the workshop dashboard (in the code, still behind a flag).</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>After-sales and customers</h4>
+                <ul class="featured__points">
+                  <li>Customer account, addresses, order history and wishlist.</li>
+                  <li>Moderated reviews with a “verified purchase” badge.</li>
+                  <li>Exchange or withdrawal requests through the site (the right of withdrawal under Brazil’s consumer protection code).</li>
+                  <li>Notifications and transactional e-mails sent in the background.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>Platform administration</h4>
+                <ul class="featured__points">
+                  <li>Dashboard, analytics, finance and commissions, management of sellers, orders, reviews and categories.</li>
+                  <li>Seller-side fraud alerts, audit log, observability page, API clients and control over opening sales.</li>
+                </ul>
+              </div>
+              <div class="featured__detail">
+                <h4>API, SEO, security and operations</h4>
+                <ul class="featured__points">
+                  <li>REST API v1 documented with OpenAPI/Swagger, generated automatically from the tests with rswag.</li>
+                  <li>SEO: slug-based URLs, Open Graph, structured data and sitemap.</li>
+                  <li>Security: strict CSP with nonce, rate limiting, upload validation, filtering of sensitive data in logs, Brakeman and bundler-audit in CI.</li>
+                  <li>Performance: a PostgreSQL JIT bottleneck was measured and fixed, taking the catalog from 1.3 s to about 10 ms.</li>
+                  <li>Two test suites, each with a defined role. <strong>Minitest</strong> (<code>test/</code>) covers domain rules and services: models, <code>Checkout::CreateOrder</code>, <code>Payments::*</code>, integration and the system tests with Capybara. It is the Rails default, with fixtures and helpers built in.</li>
+                  <li><strong>RSpec</strong> (<code>spec/</code>) covers endpoint behavior and authorization (request specs). It also produces <code>swagger/v1/swagger.yaml</code>, generated by rswag.</li>
+                  <li>CI on GitHub Actions and continuous deployment on Railway that only runs when CI is green. Infrastructure as code, 4 databases (app, cache, queue and cable) and monitoring with Sentry.</li>
+                </ul>
+              </div>
+            </details>
+
+            <div class="featured__stack">
+              <span class="tag">Rails 8.1</span>
+              <span class="tag">Ruby 3.3</span>
+              <span class="tag">Hotwire</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">PostgreSQL 16</span>
+              <span class="tag">Solid Queue / Cache / Cable</span>
+              <span class="tag">Minitest + Capybara</span>
+              <span class="tag">RSpec + rswag</span>
+              <span class="tag">Docker</span>
+            </div>
+
+            <div class="featured__actions">
+              <a class="btn btn--primary" href="https://eloshop-web-production.up.railway.app/" target="_blank" rel="noopener">
+                View online store
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="featured__side">
+            <button class="featured__shot" type="button"
+                    data-lightbox="assets/img/eloshop.jpg"
+                    aria-label="Enlarge the EloShop home page image">
+              <img src="assets/img/eloshop.jpg"
+                   alt="EloShop home page, highlighting &quot;Handmade pieces with a story&quot;"
+                   width="1400" height="740" loading="lazy">
+              <span class="featured__zoom" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
+              </span>
+            </button>
+
+            <figure class="featured__figure">
+              <button class="featured__shot" type="button"
+                      data-lightbox="assets/img/eloshop_temas.jpg"
+                      aria-label="Enlarge the EloShop theme editor image">
+                <img src="assets/img/eloshop_temas.jpg"
+                     alt="EloShop theme editor, with the theme list and a preview of the workshop storefront"
+                     width="1400" height="1111" loading="lazy">
+                <span class="featured__zoom" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
+                </span>
+              </button>
+              <figcaption class="featured__caption">Theme editor for makers and their stores</figcaption>
+            </figure>
+
+            <figure class="featured__figure">
+              <button class="featured__shot" type="button"
+                      data-lightbox="assets/img/eloshop_dashboard.jpg"
+                      aria-label="Enlarge the EloShop admin dashboard image">
+                <img src="assets/img/eloshop_dashboard.jpg"
+                     alt="EloShop admin area, with the product list, filters by maker, price and stock, and the status of each piece"
+                     width="1400" height="638" loading="lazy">
+                <span class="featured__zoom" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
+                </span>
+              </button>
+              <figcaption class="featured__caption">Dashboard</figcaption>
+            </figure>
+
+            <figure class="featured__figure">
+              <button class="featured__shot featured__shot--phone" type="button"
+                      data-lightbox="assets/img/eloshop_painel.jpg"
+                      aria-label="Enlarge the EloShop workshop dashboard image">
+                <img src="assets/img/eloshop_painel.jpg"
+                     alt="EloShop workshop dashboard on mobile, showing store pre-registration and the first steps"
+                     width="700" height="1425" loading="lazy">
+                <span class="featured__zoom" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
+                </span>
+              </button>
+            </figure>
+
+            <div class="featured__meta">
+              <div class="featured__stat">
+                <span class="featured__stat-value">242</span>
+                <span class="featured__stat-label">commits</span>
+              </div>
+              <div class="featured__stat">
+                <span class="featured__stat-value">7</span>
+                <span class="featured__stat-label">languages</span>
+              </div>
+              <div class="featured__stat">
+                <span class="featured__stat-value">Active</span>
+                <span class="featured__stat-label">in production</span>
+              </div>
+            </div>
+          </aside>
+        </article>
+      </div>
+    </section>
+
     <!-- ============================= ABOUT ============================ -->
     <section class="section section--alt" id="about">
       <div class="wrap">
@@ -520,74 +718,6 @@
             <div class="featured__meta">
               <div class="featured__stat">
                 <span class="featured__stat-value">365</span>
-                <span class="featured__stat-label">commits</span>
-              </div>
-              <div class="featured__stat">
-                <span class="featured__stat-value">7</span>
-                <span class="featured__stat-label">languages</span>
-              </div>
-              <div class="featured__stat">
-                <span class="featured__stat-value">Active</span>
-                <span class="featured__stat-label">in development</span>
-              </div>
-            </div>
-          </aside>
-        </article>
-        <article class="featured reveal">
-          <div class="featured__body">
-            <div class="featured__badges">
-              <span class="featured__badge">Featured project</span>
-              <span class="featured__status">In production</span>
-            </div>
-            <h3 class="featured__title">EloShop</h3>
-            <p class="featured__lead">
-              E-commerce and marketplace dedicated to makers of crafts and
-              handmade products. Under active development, built with the
-              latest Rails stack.
-            </p>
-
-            <ul class="featured__points">
-              <li>Store and checkout with payments integrated through <strong>Mercado Pago</strong></li>
-              <li>Dedicated admin area for workshops, catalog and orders</li>
-              <li><strong>Public API v1</strong> documented with OpenAPI, with Swagger UI at <code>/api-docs</code></li>
-              <li>CI with RSpec, system tests, <strong>Brakeman</strong>, bundler-audit and CodeQL</li>
-              <li>Error monitoring with GlitchTip and continuous deployment on Railway</li>
-            </ul>
-
-            <div class="featured__stack">
-              <span class="tag">Rails 8.1</span>
-              <span class="tag">Ruby 3.3</span>
-              <span class="tag">Hotwire</span>
-              <span class="tag">Tailwind CSS</span>
-              <span class="tag">PostgreSQL 16</span>
-              <span class="tag">Solid Queue / Cache / Cable</span>
-              <span class="tag">RSpec + rswag</span>
-              <span class="tag">Docker</span>
-            </div>
-
-            <div class="featured__actions">
-              <a class="btn btn--primary" href="https://eloshop-web-production.up.railway.app/" target="_blank" rel="noopener">
-                View online store
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <aside class="featured__side">
-            <button class="featured__shot" type="button"
-                    data-lightbox="assets/img/eloshop.jpg"
-                    aria-label="Enlarge the EloShop home page image">
-              <img src="assets/img/eloshop.jpg"
-                   alt="EloShop home page, highlighting &quot;Handmade pieces with a story&quot;"
-                   width="1400" height="740" loading="lazy">
-              <span class="featured__zoom" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
-              </span>
-            </button>
-
-            <div class="featured__meta">
-              <div class="featured__stat">
-                <span class="featured__stat-value">242</span>
                 <span class="featured__stat-label">commits</span>
               </div>
               <div class="featured__stat">
