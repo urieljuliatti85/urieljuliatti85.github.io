@@ -468,6 +468,13 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .timeline__item p { margin: 0; }
 
+.timeline__item .timeline__summary {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
 .timeline__points {
   margin: 0 0 1.2rem;
   display: grid;
